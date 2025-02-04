@@ -14,6 +14,7 @@ export default function App() {
   const handleNo = () => {
     // Mueve el botón "No"
     const button = document.querySelector('.no-button')
+    button.style.transform = `translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px)`
 
     // Muestra el toast de SweetAlert2
     Swal.fire({
@@ -32,18 +33,20 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-500 to-red-600 flex flex-col items-center justify-center relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-pink-500 to-red-600 flex flex-col items-center justify-center relative overflow-hidden p-4">
       {/* Título principal */}
-      <h1 className="text-5xl text-center md:text-6xl font-dancing text-white mb-8 animate-pulse">
-        ❤️Quieres ser mi Valentin?❤️
+      <h1 className="text-4xl md:text-6xl font-dancing text-white mb-8 text-center animate-pulse">
+      ❤️Quieres ser mi Valentin?❤️
       </h1>
 
       {/* Carta */}
       <div className={`transition-opacity duration-1000 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
-        <div className="bg-white p-8 rounded-lg shadow-xl max-w-md w-80 h-150 flex flex-col items-center justify-center">
+        <div className="bg-white p-8 rounded-lg shadow-xl max-w-md w-80 h-100 flex flex-col items-center justify-center">
           <div className={`transition-opacity duration-1000 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
-            <h2 className="text-3xl font-dancing text-pink-600 mb-4">Para mi amor...</h2>
-            <p className="text-gray-700 mb-4">
+            <h2 className="text-2xl md:text-3xl font-dancing text-pink-600 mb-4 text-center">
+              Para mi amor...
+            </h2>
+            <p className="text-gray-700 text-xs md:text-base mb-4 text-center">
               Desde el momento en que entraste en mi vida, todo ha sido mas bonito.<br />
               Eres mi razón para sonreír, eres quien devolvio el brillo a mis ojos<br />
               y la persona que ilumina cada uno de mis días.<br />
@@ -69,14 +72,14 @@ export default function App() {
         <div className="mt-8 flex gap-4">
           <button
             onClick={handleYes}
-            className="bg-green-400 shadow-2xl hover:bg-green-600 text-white px-8 py-4 rounded-full text-2xl transition-all duration-300 hover:scale-110"
+            className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full text-xl md:text-2xl transition-all duration-300 hover:scale-110"
           >
             ¡Sí!
           </button>
           <button
             onClick={handleNo}
             onMouseOver={handleNo}
-            className="no-button bg-red-500 shadow-2xl hover:bg-red-600 text-white px-8 py-4 rounded-full text-2xl transition-all duration-300"
+            className="no-button bg-red-500 hover:bg-red-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full text-xl md:text-2xl transition-all duration-300"
           >
             No
           </button>
